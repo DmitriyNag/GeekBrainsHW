@@ -7,25 +7,22 @@ using System.Threading.Tasks;
 namespace Lesson_3_HW
 {
     /// <summary>
-    /// Мой класс с унниверсальными функциями 
+    /// Мой класс с функциями 
     /// </summary>
     class MyClass
     {
         /// <summary>
         /// чтение строки
         /// </summary>
-        /// <param name="param"></param>
-        /// <returns></returns>
         public static string StrInput(string param)
         {
             Console.WriteLine(param);
             return Console.ReadLine();
         }
+
         /// <summary>
         /// Чтение целого числа
         /// </summary>
-        /// <param name="param"></param>
-        /// <returns></returns>
         public static int IntInput(string param)
         {
             string str;
@@ -40,12 +37,10 @@ namespace Lesson_3_HW
         }
 
         /// <summary>
-        /// 3.1. ** Добавить проверку, чтобы знаменатель не равнялся 0. Выбрасывать исключение
+        /// Задание 3.1. ** Добавить проверку, чтобы знаменатель не равнялся 0. Выбрасывать исключение
         ///ArgumentException("Знаменатель не может быть равен 0");
         /// Чтение целого числа, не равного 0
         /// </summary>
-        /// <param name="param"></param>
-        /// <returns></returns>
         public static int IntNotZeroInput(string param)
         {
             string str;
@@ -62,8 +57,6 @@ namespace Lesson_3_HW
         /// <summary>
         /// вывод на экран дроби
         /// </summary>
-        /// <param name="str"></param>
-        /// <param name="fr"></param>
         public static void FrPrint(string str, fraction fr)
         {
             Console.WriteLine($"{str} {fr.frTop}/{fr.frBottom}");
@@ -78,7 +71,67 @@ namespace Lesson_3_HW
       }
 
     /// <summary>
-    /// 3.*Описать класс дробей - рациональных чисел, являющихся отношением двух целых 
+    /// Структура для работы с комплексными числами
+    /// Задание 1. а) Дописать структуру Complex, добавив метод вычитания комплексных чисел. 
+    /// Продемонстрировать работу структуры;
+    /// б) Дописать класс Complex, добавив методы вычитания и произведения чисел.
+    /// Проверить работу класса;
+    /// </summary>
+    struct Complex
+    {
+        public double a;
+        public double b;
+        
+        /// <summary>
+        /// Сложение двух комплексных чисел
+        /// </summary>
+        public Complex Plus(Complex x)
+        {
+            Complex y;
+            y.a = a + x.a;
+            y.b = b + x.b;
+            return y;
+        }
+        /// <summary>
+        /// Вычитание двух комплексных чисел
+        /// </summary>
+        public Complex Minus(Complex x)
+        {
+            Complex y;
+            y.a = a - x.a;
+            y.b = b - x.b;
+            return y;
+        }
+        /// <summary>
+        /// Произведение двух комплексных чисел
+        /// </summary>
+        public Complex Multi(Complex x)
+        {
+            Complex y;
+            y.a = a * x.a - b * x.b;
+            y.b = b * x.a + a * x.b;
+            return y;
+        }
+        /// <summary>
+        /// Деление двух комплексных чисел
+        /// </summary>
+        public Complex Div(Complex x)
+        {
+            Complex y;
+            y.a = (a * x.a + b * x.b) / (Math.Pow(x.a,2) + Math.Pow(x.b, 2));
+            y.b = (b *x.a - a*x.b) / (Math.Pow(x.a, 2) + Math.Pow(x.b, 2));
+            return y;
+        }
+        public string ToString()
+        {
+            if(b>=0) return a + "+" + b + "i";
+            else return a +""+ b + "i";
+        }
+    }
+    
+
+    /// <summary>
+    /// Задание 3.*Описать класс дробей - рациональных чисел, являющихся отношением двух целых 
     /// чисел. Предусмотреть методы сложения, вычитания, умножения и деления дробей. 
     /// Написать программу, демонстрирующую все разработанные элементы класса.
     /// </summary>
@@ -96,9 +149,6 @@ namespace Lesson_3_HW
         /// <summary>
         /// Сложение дробей
         /// </summary>
-        /// <param name="fr1"></param>
-        /// <param name="fr2"></param>
-        /// <returns></returns>
         public static fraction Addition(fraction fr1, fraction fr2)
         {
             fraction tmpfr;
@@ -110,9 +160,6 @@ namespace Lesson_3_HW
         /// <summary>
         /// Вычитание дробей
         /// </summary>
-        /// <param name="fr1"></param>
-        /// <param name="fr2"></param>
-        /// <returns></returns>
         public static fraction Subtraction(fraction fr1, fraction fr2)
         {
             fraction tmpfr;
@@ -124,9 +171,6 @@ namespace Lesson_3_HW
         /// <summary>
         /// Умножение дробей
         /// </summary>
-        /// <param name="fr1"></param>
-        /// <param name="fr2"></param>
-        /// <returns></returns>
         public static fraction Multiplication(fraction fr1, fraction fr2)
         {
             fraction tmpfr;
@@ -138,9 +182,6 @@ namespace Lesson_3_HW
         /// <summary>
         /// Деление дробей
         /// </summary>
-        /// <param name="fr1"></param>
-        /// <param name="fr2"></param>
-        /// <returns></returns>
         public static fraction Division(fraction fr1, fraction fr2)
         {
             fraction tmpfr;
@@ -151,10 +192,8 @@ namespace Lesson_3_HW
 
         /// <summary>
         /// Упрощение дробей
-        /// 3.2.Добавить упрощение дробей.
+        /// Задание 3.2.Добавить упрощение дробей.
         /// </summary>
-        /// <param name="fr"></param>
-        /// <returns></returns>
         static fraction Simplific(fraction fr)
         {
             for (int i = 2; i <= fr.frTop && i <= fr.frBottom; i++)
@@ -177,36 +216,55 @@ namespace Lesson_3_HW
     {
         static void Main(string[] args)
         {
-            #region Взаимодествие со структурой дробей
-            //Задание 3
-            //fraction myFrac1;
-            //fraction myFrac2;
-            //myFrac1.frTop = MyClass.IntInput("Введите числитель первой дроби (целое число)");
-            //myFrac1.frBottom = MyClass.IntNotZeroInput("Введите знаменатель первой дроби (целое число, не равное 0)");
-            //myFrac2.frTop = MyClass.IntInput("Введите числитель второй дроби (целое число)");
-            //myFrac2.frBottom = MyClass.IntNotZeroInput("Введите знаменатель второй дроби (целое число, не равное 0)");
+            #region Задание 3. Взаимодествие со структурой дробей
+            fraction myFrac1;
+            fraction myFrac2;
+            myFrac1.frTop = MyClass.IntInput("Введите числитель первой дроби (целое число)");
+            myFrac1.frBottom = MyClass.IntNotZeroInput("Введите знаменатель первой дроби (целое число, не равное 0)");
+            myFrac2.frTop = MyClass.IntInput("Введите числитель второй дроби (целое число)");
+            myFrac2.frBottom = MyClass.IntNotZeroInput("Введите знаменатель второй дроби (целое число, не равное 0)");
 
-            //MyClass.FrPrint("Первая дробь:", myFrac1);
-            //MyClass.FrPrint("Вторая дробь:", myFrac2);
+            MyClass.FrPrint("Первая дробь:", myFrac1);
+            MyClass.FrPrint("Вторая дробь:", myFrac2);
 
-            //fraction myFrac3 = fraction.Addition(myFrac1, myFrac2);
-            //MyClass.FrPrint("Сложение:", myFrac3);
-            //myFrac3 = fraction.Subtraction(myFrac1, myFrac2);
-            //MyClass.FrPrint("Вычитание:", myFrac3);
-            //myFrac3 = fraction.Multiplication(myFrac1, myFrac2);
-            //MyClass.FrPrint("Умножение:", myFrac3);
-            //myFrac3 = fraction.Division(myFrac1, myFrac2);
-            //MyClass.FrPrint("Деление:", myFrac3);
-            //MyClass.Pause();
-
+            fraction myFrac3 = fraction.Addition(myFrac1, myFrac2);
+            MyClass.FrPrint("Сложение:", myFrac3);
+            myFrac3 = fraction.Subtraction(myFrac1, myFrac2);
+            MyClass.FrPrint("Вычитание:", myFrac3);
+            myFrac3 = fraction.Multiplication(myFrac1, myFrac2);
+            MyClass.FrPrint("Умножение:", myFrac3);
+            myFrac3 = fraction.Division(myFrac1, myFrac2);
+            MyClass.FrPrint("Деление:", myFrac3);
+            MyClass.Pause();
             #endregion
 
+            #region Задание2 сумма чисел
+            Console.Clear();
             CountPosOddNumbers(); //Задание 2
             MyClass.Pause();
+            #endregion
 
+            #region Задание 1. Комплексные числа
+            Console.Clear();
+            Complex complex1;
+            complex1.a = 1;
+            complex1.b = 1;
+            Complex complex2;
+            complex2.a = 2;
+            complex2.b = 2;
+            Complex result = complex1.Plus(complex2);
+            Console.WriteLine("Сложение " + result.ToString());
+            result = complex1.Multi(complex2);
+            Console.WriteLine("Умножение " + result.ToString());
+            result = complex1.Minus(complex2);
+            Console.WriteLine("Вычитание " + result.ToString());
+            result = complex1.Div(complex2);
+            Console.WriteLine("Деление " + result.ToString());
+            MyClass.Pause();
+            #endregion
         }
         /// <summary>
-        /// 2. а) С клавиатуры вводятся числа, пока не будет введен 0 (каждое число в новой строке). 
+        /// Задание 2. а) С клавиатуры вводятся числа, пока не будет введен 0 (каждое число в новой строке). 
         /// Требуется подсчитать сумму всех нечетных положительных чисел. Сами числа и сумму 
         /// вывести на экран, используя tryParse;
         ///б) Добавить обработку исключительных ситуаций на то, что могут быть введены 
