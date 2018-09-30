@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lesson_3_HW
 {
-
-
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             #region Задание 3. Взаимодествие со структурой дробей
             Fraction myFrac1 = new Fraction(MyClass.IntInput("Введите числитель первой дроби (целое число)"), 
