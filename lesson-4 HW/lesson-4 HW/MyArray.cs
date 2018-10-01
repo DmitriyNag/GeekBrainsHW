@@ -25,10 +25,7 @@ namespace lesson_4_HW
             get
             {
                 int sumTmp = 0;
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    sumTmp += arr[i];
-                }
+                for (int i = 0; i < arr.Length; i++) sumTmp += arr[i];
                 return sumTmp;
             }
         }
@@ -41,10 +38,7 @@ namespace lesson_4_HW
             {
                 int max = 0;
                 int MaxNumber = FindMaxNumber();
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    if (arr[i] == MaxNumber) max += 1;
-                }
+                for (int i = 0; i < arr.Length; i++) if (arr[i] == MaxNumber) max += 1;
                 return max;
             }
         }
@@ -76,7 +70,7 @@ namespace lesson_4_HW
                 }
                 
             }
-            catch
+            catch 
             {
                 arr = new int[] { 0 };
             }
@@ -88,15 +82,18 @@ namespace lesson_4_HW
         /// <param name="pathname"></param>
         public MyArray (string pathname)
         {
-            //добавить try  и исключения
-            string text = File.ReadAllText(pathname);
-            string[] numbers = text.Split(' ');
-            arr = new int[numbers.Length];
-            for (int i = 0; i < arr.Length; i++)
+            try
             {
-                arr[i] = Convert.ToInt32(numbers[i]);
+                // думаю это не оптимальный способ передаи данных из файла, моно как то сократить?
+                string text = File.ReadAllText(pathname);
+                string[] numbers = text.Split(' ');
+                arr = new int[numbers.Length];
+                for (int i = 0; i < arr.Length; i++) arr[i] = Convert.ToInt32(numbers[i]);
             }
-
+            catch
+            {
+                arr = new int[] { 0 };
+            }
         }
        
         /// <summary>
@@ -105,10 +102,7 @@ namespace lesson_4_HW
         private int FindMaxNumber()
         {
             int maxNumber = arr[0];
-            for (int i = 1; i < arr.Length; i++)
-            {
-                if (maxNumber < arr[i]) maxNumber = arr[i];
-            }
+            for (int i = 1; i < arr.Length; i++) if (maxNumber < arr[i]) maxNumber = arr[i];
             return maxNumber;
         }
 
@@ -124,10 +118,7 @@ namespace lesson_4_HW
             int count = 0;
             for (int i = 0; i < arr.Length - 1; i++)
             {
-                if ((arr[i] % 3 == 0 && arr[i] != 0) || (arr[i + 1] % 3 == 0 && arr[i + 1] != 0))
-                {
-                    count++;
-                }
+                if ((arr[i] % 3 == 0 && arr[i] != 0) || (arr[i + 1] % 3 == 0 && arr[i + 1] != 0)) count++;
             }
             return count;
         }
@@ -187,10 +178,7 @@ namespace lesson_4_HW
         /// <param name="a">Множитель</param>
         public void Multi(int a)
         {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = arr[i]*a;
-            }
+            for (int i = 0; i < arr.Length; i++) arr[i] = arr[i]*a;
         }
 
     }
