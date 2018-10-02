@@ -86,7 +86,7 @@ namespace lesson_4_HW
             {
                 // думаю это не оптимальный способ передаи данных из файла, моно как то сократить?
                 string text = File.ReadAllText(pathname);
-                string[] numbers = text.Split(' ');
+                string[] numbers = text.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 arr = new int[numbers.Length];
                 for (int i = 0; i < arr.Length; i++) arr[i] = Convert.ToInt32(numbers[i]);
             }

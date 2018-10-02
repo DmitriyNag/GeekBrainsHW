@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 
 namespace lesson_4_HW
 {
+
     class Program
     {
         static void Main(string[] args)
         {
+
             #region 1 задание
             MyArray arr = new MyArray(20);
             arr.InitArray(-10000, 10000);
@@ -27,18 +29,23 @@ namespace lesson_4_HW
             mylist.Multi(-5);
             Console.WriteLine("Умножили: \n" + mylist.PrintArray());
             MyClass.Pause();
-            Console.WriteLine(mylist.Sum);
-            Console.WriteLine(mylist.MaxCount);
+            Console.WriteLine("Сумма всех значений массива " + mylist.Sum);
+            Console.WriteLine("кол-во максимальных значений в массиве " + mylist.MaxCount);
             MyClass.Pause();
             MyArray listFromFile = new MyArray("input.txt");
             Console.WriteLine(listFromFile.PrintArray());
             listFromFile.Multi(-5);
             listFromFile.PrintToFile("output.txt");
-            MyClass.Pause(); 
+            MyClass.Pause();
             #endregion
 
+            #region Задание 3
+            Account acc = new Account("root", "GeekBrains", "Dima");
+            if (acc.PassControl("1.txt")) Console.WriteLine("Access granted!");
+            else Console.WriteLine("Access denied");
+            MyClass.Pause();
+            #endregion
         }
-
 
     }
 }
