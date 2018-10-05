@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System;
 
-namespace Lesson_5_HW
+namespace Lesson_5_HW // Наговицын Дмитрий HW5
 {
     class Program
     {
@@ -28,20 +28,22 @@ namespace Lesson_5_HW
             //Console.ReadKey(); 
             //#endregion
 
-            #region task2
-            string input = "мама мыла раму папа пилил деревоо брат сидел на корове и отгонял мух";
-            //Console.WriteLine(Message.WordsLessN(input,4));
-            //Console.WriteLine(Message.RemoveWordsWithEndChar(input,'а'));
-            //Console.WriteLine(Message.LongestWord(input));
-            //Console.WriteLine(Message.AllLongestWords(input));
-            Console.ReadKey();
-            #endregion
+            //#region task2
+            //string input = "мама мыла раму папа пилил деревоо брат сидел на корове и отгонял мух";
+            ////Console.WriteLine(Message.WordsLessN(input,4));
+            ////Console.WriteLine(Message.RemoveWordsWithEndChar(input,'а'));
+            ////Console.WriteLine(Message.LongestWord(input));
+            ////Console.WriteLine(Message.AllLongestWords(input));
+            //Console.ReadKey();
+            //#endregion
 
-            string a = "erpoogbm;";
-            string b = "PooGbm;Er";
-            if (UsingStrings.TwoStringCompare(a,b))  Console.WriteLine("одна строка является перестановкой другой ");
-            else Console.WriteLine("одна строка НЕ является перестановкой другой");
-            Console.ReadKey();
+            //#region task3
+            //string a = "erpoogbm;";
+            //string b = "PooGbm;Er";
+            //if (UsingStrings.TwoStringCompare(a, b)) Console.WriteLine("одна строка является перестановкой другой ");
+            //else Console.WriteLine("одна строка НЕ является перестановкой другой");
+            //Console.ReadKey(); 
+            //#endregion
 
         }
     }

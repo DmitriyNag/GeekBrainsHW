@@ -46,7 +46,11 @@ namespace Lesson_5_HW
             else return false;
 
         }
-
+        /// <summary>
+        /// функция сортировки массива символов
+        /// </summary>
+        /// <param name="CharArray"></param>
+        /// <returns></returns>
         private static char[] SortArray (char[] CharArray)
         {
             char tmpChar;
