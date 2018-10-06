@@ -11,7 +11,7 @@ namespace Lesson_5_HW
         /// <summary>
         /// Конструктор
         /// </summary>
-        /// <param name="login">логин</param>
+        /// <param name="login">логин </param>
         /// <param name="password">пароль</param>
         /// <param name="name">имя пользователя</param>
         public Account(string login, string password, string name)

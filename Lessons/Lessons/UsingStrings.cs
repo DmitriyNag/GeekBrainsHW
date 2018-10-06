@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Text.RegularExpressions;using System.Text;
+using System.Text.RegularExpressions;
+using System.Text;
+
 
 namespace Lesson_5_HW
 {
     /// <summary>
 
-    /// </summary>
+    /// </summary> 
     class UsingStrings
     {
         /// <summary>
