@@ -13,7 +13,7 @@ namespace EGE // Наговицын Дмитрий HW5 Task 4
         static void Main(string[] args)
         {
 
-            int gradesnumber = 3; // кол-во оценок для учеников
+            int gradesnumber = 3; // кол-во оценок для учеников 
             string pathname = "data.txt"; // файл данных
             int worstgrades = 3;    // кол-во худших средних оценок, учеников получивших которые нужно вывести на экран
             Pupil[] pupils;
