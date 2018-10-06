@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson- 5 HW", "Lessons\Lesson- 5 HW.csproj", "{A6674CD0-7AAD-4200-904A-DEF19A7A49B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task 1,2,3", "Lessons\Task 1,2,3.csproj", "{A6674CD0-7AAD-4200-904A-DEF19A7A49B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЕГЭ", "ЕГЭ\ЕГЭ.csproj", "{DE805688-744A-437D-92A5-E928A5CF394D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task 4, EGE", "ЕГЭ\Task 4, EGE.csproj", "{DE805688-744A-437D-92A5-E928A5CF394D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -32,42 +32,57 @@ namespace Lesson_5_HW
         {
             str1 = str1.ToLower();
             str2 = str2.ToLower();
-            char[] ArStr1 = str1.ToCharArray();
-            char[] ArStr2 = str2.ToCharArray();
+            char[] arStr1 = StringToCharArray(str1);
+            char[] arStr2 = StringToCharArray(str2);
 
-            ArStr1 = SortArray(ArStr1);
-            str1 = string.Join("", ArStr1);
-            Console.WriteLine(str1);
-            ArStr2 = SortArray(ArStr2);
-            str2 = string.Join("", ArStr2);
-            Console.WriteLine(str2);
+            arStr1 = SortArray(arStr1);
+            str1 = CharArrayToString(arStr1);
+            arStr2 = SortArray(arStr2);
+            str2 = CharArrayToString(arStr2);
+            return str1.CompareTo(str2) == 0;
+        }
 
-            if (str1.CompareTo(str2) == 0) return true;
-            else return false;
+        private static char[] StringToCharArray(string str)
+        {
+            char[] charArr = new char[str.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                charArr[i] = str[i];
+            }
 
+            return charArr;
+        }
+
+        private static string CharArrayToString(char[] charArr)
+        {
+            StringBuilder str = new StringBuilder();
+            foreach (char t in charArr)
+            {
+                str.Append(t);
+            }
+
+            return Convert.ToString(str);
         }
         /// <summary>
         /// функция сортировки массива символов
         /// </summary>
-        /// <param name="CharArray"></param>
-        /// <returns></returns>
-        private static char[] SortArray (char[] CharArray)
+        private static char[] SortArray (char[] charArray)
         {
             char tmpChar;
-            for (int j = 1; j < CharArray.Length; j++)
+            for (int j = 1; j < charArray.Length; j++)
             {
-                for (int i = 0; i < CharArray.Length - j; i++)
+                for (int i = 0; i < charArray.Length - j; i++)
                 {
-                    if (CharArray[i].CompareTo(CharArray[i+1]) < 0)
+                    if (charArray[i].CompareTo(charArray[i+1]) < 0)
                     {
-                        tmpChar = CharArray[i + 1];
-                        CharArray[i + 1] = CharArray[i];
-                        CharArray[i] = tmpChar;
+                        tmpChar = charArray[i + 1];
+                        charArray[i + 1] = charArray[i];
+                        charArray[i] = tmpChar;
                     }
 
                 }
             }
-            return CharArray;
+            return charArray;
         }
         
     }

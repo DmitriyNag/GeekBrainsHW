@@ -2,13 +2,13 @@
 using System.Threading.Tasks;
 using System;
 
-namespace Lesson_5_HW // Наговицын Дмитрий HW5
+namespace Lesson_5_HW // Наговицын Дмитрий HW5 Tasks 1,2,3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //#region task1
+            #region task1
             //string passRule = @"^[^\d]{1}[a-zA-z\d]{1,9}$";
             //string log = string.Empty;
             //while (true)
@@ -25,25 +25,33 @@ namespace Lesson_5_HW // Наговицын Дмитрий HW5
             //        "содержащий только буквы латинского алфавита или цифры, " +
             //        "при этом цифра не может быть первой");
             //}
-            //Console.ReadKey(); 
+            //Console.ReadKey();
             //#endregion
 
             //#region task2
             //string input = "мама мыла раму папа пилил деревоо брат сидел на корове и отгонял мух";
-            ////Console.WriteLine(Message.WordsLessN(input,4));
-            ////Console.WriteLine(Message.RemoveWordsWithEndChar(input,'а'));
-            ////Console.WriteLine(Message.LongestWord(input));
-            ////Console.WriteLine(Message.AllLongestWords(input));
+            //Console.WriteLine(input);
+            //Console.Write("Слова короче 4х букв: ");
+            //Console.WriteLine(Message.WordsLessN(input, 4));
+            //Console.Write("Слова не оканчивающиеся на 'а': ");
+            //Console.WriteLine(Message.RemoveWordsWithEndChar(input, 'а'));
+            //// ReSharper disable once StringLiteralTypo
+            //Console.Write("длинна самого длинного слова: ");
+            //Console.WriteLine(Message.LongestWord(input));
+            //Console.Write("самые длинные слова: ");
+            //Console.WriteLine(Message.AllLongestWords(input));
             //Console.ReadKey();
-            //#endregion
+            #endregion
 
-            //#region task3
-            //string a = "erpoogbm;";
-            //string b = "PooGbm;Er";
-            //if (UsingStrings.TwoStringCompare(a, b)) Console.WriteLine("одна строка является перестановкой другой ");
-            //else Console.WriteLine("одна строка НЕ является перестановкой другой");
-            //Console.ReadKey(); 
-            //#endregion
+            #region task3
+            string a = "erpoAogbm;";
+            string b = "aPooGbm;Er";
+            Console.WriteLine($"Первая строка: {a}");
+            Console.WriteLine($"Первая строка: {b}");
+            if (UsingStrings.TwoStringCompare(a, b)) Console.WriteLine("одна строка является перестановкой другой ");
+            else Console.WriteLine("одна строка НЕ является перестановкой другой");
+            Console.ReadKey();
+            #endregion
 
         }
     }
