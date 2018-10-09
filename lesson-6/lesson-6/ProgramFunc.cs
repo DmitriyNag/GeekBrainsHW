@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace lesson_6
+namespace Task2
 {
     class ProgramFunc
     {

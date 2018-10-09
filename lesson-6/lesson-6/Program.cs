@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-using static lesson_6.ProgramFunc;
+using static Task2.ProgramFunc;
 
-namespace lesson_6  //Наговицын Дмитрий HW6, Task 2
+namespace Task2  //Наговицын Дмитрий HW6, Task 2
 {
     //2. Модифицировать программу нахождения минимума функции так, чтобы можно было передавать функцию в виде делегата.
     //а) Сделайте меню с различными функциями и предоставьте пользователю выбор, для какой функции и на каком отрезке находить минимум.
